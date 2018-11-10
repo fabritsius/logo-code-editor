@@ -37,6 +37,8 @@ setup = () => {
   window.addEventListener('resize', () => {
     scaleCanvas();
   });
+  // load docs
+  loadDocumentation();
 }
 
 /**
@@ -254,7 +256,7 @@ const styleFeedback = (element, switch_class, period_ms) => {
 }
 
 /**
- * handleTab
+ * handleTab()
  * Tab won't cause a jump to the next DOM element.
  */
 const handleTab = () => {
@@ -270,6 +272,33 @@ const handleTab = () => {
       code_area.selectionEnd = cursor + 2;
     }
   }
+}
+
+/**
+ * loadDocumentation()
+ * Load documentation which now can be viewed under the editor.
+ */
+const loadDocumentation = () => {
+  // fetch and parse documentation from /docs URI
+  const documentation = document.querySelector('#documentation');
+  fetch('/docs/index.html').then((response) => {
+    return response.text();
+  }).then((docs_unparsed) => {
+    const parser = new DOMParser();
+    const docs = parser.parseFromString(docs_unparsed, "text/html");
+    documentation.appendChild(docs.querySelector('#documentation_content'));
+  });
+  // setup documentation toggle events
+  const docs_btn = document.querySelector('#docs_btn');
+  docs_btn.addEventListener('click', () => {
+    documentation.classList.toggle('is_hidden');
+    docs_btn.classList.toggle('active');
+    if (docs_btn.classList.contains('active')) {
+      docs_btn.innerHTML = 'hide docs'
+    } else {
+      docs_btn.innerHTML = 'show docs'
+    }
+  });
 }
 
 /**

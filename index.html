@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Logo Code Editor</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/docs.css" async>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <script src="js/libs/p5/p5.min.js"></script>
     <script src="js/libs/p5/p5.dom.min.js"></script>
     <script src="js/turtle.js"></script>
     <script src="js/sketch.js"></script>
-    <script src="js/swhelper.js"></script>
+    <script src="js/swhelper.js" async></script>
 </head>
 <body>
     <div id="main">
@@ -28,9 +29,16 @@
             </div>
             <textarea id="code" spellcheck="false" placeholder="code here..."></textarea>
             <div id="editor_footer">
-                <a href="https://github.com/fabritsius/logo-code-editor" target="_blank">Repo is available on GitHub</a>
+                <button id="docs_btn">show docs</button>
+                <a href="https://www.google.ru/search?q=color+picker+tool" target="_blank">find color picker</a>
             </div>
         </div>
+        <div id="documentation_box">
+            <div id="documentation" class="is_hidden"></div>
+        </div>
     </div>
+    <footer>
+        <span>Logo Code Editor by <a href="https://github.com/fabritsius" target="_blank">@fabritsius</a> – Fall 2018</span><br><span><a href="https://github.com/fabritsius/logo-code-editor" target="_blank">Source Code is available on GitHub</a></span>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Logo Code Editor Documentation</title>
+	<link rel="stylesheet" href="/css/docs.css">
+	<link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+</head>
+<body id="code_editor_documentation">
+	<article id="logo_documentation">
+		<h1>Logo Documentation</h1>
+		<div id="documentation_content">
+			<h2 id="logo_core">Simple Commands</h2>
+			<ul>
+				<li>
+					<code>fd</code> followed by a <code>number</code>:<br> 
+					turtle will move forward number of times;<br>
+					<i>Examples</i>: <code>fd 50</code>, <code>fd 87</code>
+				</li>
+				<li>
+					<code>bd</code> means the same as <code>fd</code> but backwards;<br>
+					<i>Example</i>: <code>bd 10</code>
+				</li>
+				<li>
+					<code>rt</code> followed by an <code>angle</code>:<br>
+				 	turtle will turn right by the angle;<br>
+					<i>Examples</i>: <code>rt 45</code>, <code>rt 120</code>
+				</li>
+				<li>
+					<code>lt</code> means the same as <code>rt</code> but the other way;<br>
+					<i>Example</i>: <code>lt 90</code>
+				</li>
+				<li>
+					<code>pu</code>: turtle stops drawing and moves more secretly;
+				</li>
+				<li>
+					<code>pd</code>: turtle starts drawing the line after itself.
+				</li>
+			</ul>
+			<h2 id="logo_style">Styling Commands</h2>
+			<ul>
+				<li>
+					<code>clr</code> followed by a <code>color</code>:<br>
+					turtle changes line color to a new one;<br>
+					<i>Examples</i>: <code>clr cyan</code>, <code>clr #fff</code>
+				</li>
+				<li>
+					<code>bckgr</code> followed by a <code>color</code>:<br>image will be filled with the new color.<br>
+					<i>Examples</i>:<code>bckgr purple</code>, <code>bckgr #022a42</code>
+				</li>
+			</ul>
+			<h2 id="logo_advanced">Advances Commands</h2>
+			<ul>
+				<li>
+					<code>repeat</code> followed by a <code>number</code> and <code>[array of commands]</code>:<br>
+					turtle will repeat commands in the array number of times (can be nested);<br>
+					<i>Examples</i>: <code>repeat 3 [fd 100 rt 120]</code>, <code>repeat 4 [rt 90 repeat 36 [fd 10 rt 10] ]</code>;
+				</li>
+				<li>
+					<code>to</code> followed by a <code>name</code>:<br>create a method, callable by the name.<br><i>Example</i>:<br>
+					<code>to triangle repeat 3 [fd 100 rt 120] end</code>
+					<code>triangle</code>
+				</li>
+			</ul>
+			<h2 id="editor_commands">Other Commands</h2>
+			<ul>
+				<li>
+					<code>save</code>: save an image drawn by the turtle (be careful with this one).
+				</li>
+			</ul>
+			<h2 id="editor_features">Even More Tips</h2>
+			<ul>
+				<li>
+					Files with <code>.logocode</code> extension can be <code>drag&dropped</code> into the editor area<br>
+					(this will update the code in the editor).
+				</li>
+			</ul>
+		</div>	
+	</article>
+</body>
+</html>

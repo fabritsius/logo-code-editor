@@ -1,32 +1,28 @@
-# Turtle Path Editor
+# Logo Code Editor
 
 _inspired by:_ [Daniel Shiffman](https://github.com/shiffman)
 
-Turtles can't speak and don't understand human language, except there is one who also doesn't understand human language, but she understands something. The language she speaks is strange, but it can be mastered relatively fast and after that you will wield the turtle the way you always desired. See the rest of this documentation to learn her tongue.
+[Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) was developed in 1967 and is mostly used as an educational programming language. This project is a browser interpreter of the Logo language and uses it's custom version. Full list of supported commands is available in the [documentation](https://fabritsius.github.io/logo-code-editor/docs/).
+
+The code is interpreted live (after any change) and the main idea was to create a powerful and portable Logo Editor which allows to create `400x400` good-looking artworks with limited resources. Another important feature is the ability to share your work with friends via special `.logocode` file which can be easily exported and imported with the editor.
 
 ## Features
 
 - uses a version of [Logo programming language](https://en.wikipedia.org/wiki/Logo_(programming_language));
+- supports loops and simple methods (more in the [documentation](https://fabritsius.github.io/logo-code-editor/docs/));
 - random [example](./examples) is shown each time webpage is reloaded;
 - there is an option to save both your code and a generated image;
 - you can Drag and Drop `.logocode` file right into the editor;
 - works Offline after first load.
 
-## Turtle words
+[**Open the editor**](https://fabritsius.github.io/logo-code-editor/)
 
-- `fd` followed by a `number` (_ex.:_ `fd 50`, `fd 87`):<br>turtle will move forward `number` of times;
-- `bd` means the same as `fd` but backwards (_ex.:_ `bd 10`);
-- `rt` followed by an `angle` (_ex.:_ `rt 45`, `rt 120`):<br>turtle will turn right by the `angle`;
-- `lt` means the same as `rt` but the other way (_ex.:_ `lt 90`);
-- `pu`:<br>turtle stops drawing and moves more secretive;
-- `pd`:<br>turtle starts drawing the line after itself;
-- `clr` followed by a `color` (_ex.:_ `clr cyan`, `clr #fff`):<br>turtle changes line `color` to a new one;
-- `repeat` followed by a `number` and \[array of commands\]:<br>turtle will repeat commands in the array `number` of times (can be nested).<br>_Examples:_ `repeat 3 [fd 100 rt 120]`, `repeat 4 [rt 90 repeat 36 [fd 10 rt 10] ]`;
-- `bckgr` followed by a `color` (_ex.:_ `bckgr purple`, `bckgr #022a42`):<br>image will be filled with the new `color` ;
-- `save`:<br>save an image drawn by the turtle (be careful with this one);
-- `to` followed by a `name`:<br>create a method, callable by the `name`. To use the method call it by `name`.<br>_Example:_<br>`to triangle repeat 3 [fd 100 rt 120] end` <br>`triangle`.
+## Logocoding Tips
 
-[**Go, try them out!**](https://fabritsius.github.io/logo-code-editor/)
+- by saving your code regularly, you can use your Downloads folder as a simple version control (be safe);
+- if you coded a great Art you can go to [./examples](./examples) and request you `.logocode` to be added;
+- don't call a method inside of it's definition.
+
 
 ## Usage locally
 
@@ -37,10 +33,13 @@ Turtles can't speak and don't understand human language, except there is one who
 
   or just double click on `index.html` after saving and unzipping this repo.
 
-## Possible improvements
+## TODO
 
-- add more examples into [./examples](./examples) directory
-- add cheatsheet with commands to the web page (improve editor further).
+- [x] implement the core of Logo language parser
+- [x] add `.logocode` shring system 
+- [x] add support for simple methods
+- [x] add documentation to the editor web page
+- [ ] add more options for sharing
 
 ## Links
 
