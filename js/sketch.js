@@ -281,7 +281,7 @@ const handleTab = () => {
 const loadDocumentation = () => {
   // fetch and parse documentation from /docs URI
   const documentation = document.querySelector('#documentation');
-  fetch('/docs/index.html').then((response) => {
+  fetch('../docs/index.html').then((response) => {
     return response.text();
   }).then((docs_unparsed) => {
     const parser = new DOMParser();
