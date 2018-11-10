@@ -279,9 +279,10 @@ const handleTab = () => {
  * Load documentation which now can be viewed under the editor.
  */
 const loadDocumentation = () => {
+  const repo = 'logo-code-editor';
   // fetch and parse documentation from /docs URI
   const documentation = document.querySelector('#documentation');
-  fetch('../docs/index.html').then((response) => {
+  fetch(`/${repo}/docs/index.html`).then((response) => {
     return response.text();
   }).then((docs_unparsed) => {
     const parser = new DOMParser();
