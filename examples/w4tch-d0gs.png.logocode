@@ -1,0 +1,91 @@
+to line_peace
+  fd 14 rt 20 bd 10 lt 20
+  fd 18 lt 80 bd 4 rt 80
+  bd 10 lt 5 fd 24 rt 5
+end
+
+to random_line
+  fd 4
+  line_peace rt 3
+  line_peace lt 8
+  line_peace rt 6
+  fd 1 rt 180 
+  line_peace lt 3
+  line_peace rt 8
+  line_peace lt 6
+  rt 180
+  fd 24 lt 90 fd 1 rt 90 
+end
+
+to long_line
+  fd 3 rt 90 fd 2 lt 90
+  random_line
+  pu fd 80 pd
+  rt 90 fd 2 lt 90
+end
+
+to draw_sign
+  repeat 2 [long_line] lt 145
+  repeat 2 [long_line] rt 110
+  repeat 2 [long_line] lt 145
+  repeat 2 [long_line] lt 155
+  repeat 3 [long_line] rt 135
+  repeat 3 [long_line] lt 160
+end
+
+# set background
+bckgr #18292e
+
+# draw background details
+clr #203d45
+pu bd 200 lt 90 fd 160 rt 90 pd
+fd 200 rt 90 fd 10 lt 90 fd 60 lt 90
+fd 10 rt 90 fd 140
+rt 90 fd 120 rt 90 fd 110 pu fd 180 pd
+fd 110 
+lt 90 fd 20 lt 90 fd 400
+pu bd 330 pd
+rt 90 fd 150 rt 90 fd 10 lt 90
+fd 10 lt 90 fd 10 rt 90 fd 60
+lt 90
+
+# set initial position
+pu bd 0 lt 90 fd 350 rt 180 pd
+
+# draw sign in blue
+clr #42A4BE
+draw_sign
+fd 20 rt 87 fd 1 lt 86
+clr #46abc7
+draw_sign
+fd 10 rt 89.5 bd 10 lt 89
+draw_sign
+
+# reposition
+pu fd 10 rt 88.5 fd 4 lt 90 pd
+
+# draw shadow for red
+clr #ad2829
+draw_sign
+fd 16 rt 87 fd 10 lt 88
+draw_sign
+rt 89 lt 90
+draw_sign
+
+# draw sign in red
+clr #d12e2f
+fd 20 rt 92 bd 8 lt 90
+draw_sign
+fd 16 rt 87 fd 10 lt 88
+draw_sign
+rt 89 lt 90
+draw_sign
+
+# draw extra shadows
+clr #a32626
+pu lt 17 fd 169 pd fd 17
+pu lt 76 fd 145 pd lt 60 fd 18
+pu rt 115 fd 73 pd rt 36 fd 20
+pu rt 96 fd 243 pd lt 92 fd 18
+
+#save
