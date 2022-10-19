@@ -1,0 +1,32 @@
+bckgr #123875
+
+to part
+  lt 150 fd 40
+  lt 150 fd 20
+  lt 80 fd 20
+  lt 130 fd 25
+  lt 150 fd 25
+  lt 60
+end
+
+to blade
+  repeat 33 [
+    part fd 25 rt 3
+  ]
+end
+
+pu rt 90 fd 50 lt 90 pd
+
+to thing
+  repeat 3 [
+    blade
+    pu rt 140 fd 290 pd
+  ]
+end
+
+
+clr #fdf900 thing fd 2 rt 10
+clr #11edde thing fd -2 rt 10
+clr white thing
+
+#save
